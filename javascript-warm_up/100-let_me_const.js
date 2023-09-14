@@ -1,7 +1,10 @@
-#!/usr/bin/usr
+#!/usr/bin/node
+function callMeMoby(x, thefunction) {
 
-exports.callMeMoby = function (x) {
     for (let i = 0; i < x; i++) {
-        console.log("Where I am!");
-    };
-};
+      thefunction();
+    }
+  }
+
+  exports.callMeMoby = callMeMoby
+  

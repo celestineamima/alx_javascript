@@ -1,7 +1,10 @@
 #!/usr/bin/node
+function callMeMoby(x, thefunction) {
 
-function addMeMaybe (number, theFunction) {
-    return theFunction(number + 1);
-};
+    for (let i = 0; i < x; i++) {
+      thefunction();
+    }
+  }
 
-exports.addMeMaybe = addMeMaybe;
+  exports.callMeMoby = callMeMoby
+  
