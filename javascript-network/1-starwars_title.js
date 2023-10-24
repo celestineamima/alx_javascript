@@ -1,12 +1,14 @@
 #!/usr/bin/node
-const request = require('request');
-request('https://swapi-api.alx-tools.com/api/films/' +process.argv[2], function (error, response, body) {
-    if (error) {
-        console.log(error);
-    } else if (response.statusCode === 200) {
-        // convert to javascript object then access it
-        console.log(JSON.parse(body).title);
-    } else {
-        console.log('code:' +response.statusCode);
-    }
-});
+
+const req = require('request');
+// the starwars api enpoind link
+const id = process.argv[2];
+const url = `https://swapi-api.alx-tools.com/api/films/${id}`;
+
+// the request function
+req.get(url, {encoding: 'utf-8'})
+    .on('data', data => {
+        const result = JSON.parse(data);
+        console.log(result.title);
+    });
+    
